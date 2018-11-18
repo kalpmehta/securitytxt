@@ -1,14 +1,14 @@
-#Security.txt
+# Security.txt
 
-###Summary
-When security risks in web services are discovered by independent security researchers who understand the severity of the risk, they often lack the channels to properly disclose them. As a result, security issues may be left unreported. Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities.
+### Summary
+> When security risks in web services are discovered by independent security researchers who understand the severity of the risk, they often lack the channels to properly disclose them. As a result, security issues may be left unreported. Security.txt defines a standard to help organizations define the process for security researchers to securely disclose security vulnerabilities.
 
 Source: https://tools.ietf.org/html/draft-foudil-securitytxt-01
 
 The Kalpesh_Securitytxt module provides the following functionality: 
 * allows to save the security configurations in the admin panel
-* contains a router to match application action class for requests to the `security.txt` and `security.txt.sig` files.
-* serves the content of the `security.txt` and `security.txt.sig` files.
+* contains a router to match application action class for requests to the `.well-known/security.txt` and `.well-known/security.txt.sig` files.
+* serves the content of the `.well-known/security.txt` and `.well-known/security.txt.sig` files.
 
 A valid security.txt file could look like the following example:
 
