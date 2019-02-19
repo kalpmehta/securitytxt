@@ -22,3 +22,10 @@ Signature: https://example.com/.well-known/security.txt.sig
 Security.txt can be accessed at below location:
 `https://example.com/.well-known/security.txt`
 
+To create security.txt signature (security.txt.sig) file:
+
+`gpg -u KEYID --output security.txt.sig --armor --detach-sig security.txt`
+
+To verify the security.txt file's signature:
+
+`gpg --verify security.txt.sig security.txt`
