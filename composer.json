@@ -22,6 +22,5 @@
         "psr-4": {
             "Kalpesh\\Securitytxt\\": ""
         }
-    },
-    "version": "1.0.0"
+    }
 }
