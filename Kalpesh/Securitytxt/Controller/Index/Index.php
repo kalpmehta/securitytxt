@@ -36,7 +36,6 @@ class Index extends Action
     )
     {
         $this->resultPageFactory = $resultPageFactory;
-
         parent::__construct($context);
     }
 

@@ -16,14 +16,12 @@
         <tab id="security" translate="label" sortOrder="200">
             <label>Security</label>
         </tab>
-
         <section id="kalpesh_securitytxt_securitytxt" translate="label" type="text" sortOrder="520" showInDefault="1"
                  showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Security.txt</label>
             <tab>security</tab>
             <resource>Kalpesh_Securitytxt::config</resource>
-
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
                    showInStore="1">
                 <label>General</label>
@@ -41,6 +39,7 @@
                        showInWebsite="1" showInStore="1">
                     <label>Email</label>
                     <validate>validate-email</validate>
+                    <backend_model>Kalpesh\Securitytxt\Model\Config\Backend\Validate</backend_model>
                 </field>
                 <field id="phone" translate="label comment" type="text" sortOrder="20" showInDefault="1"
                        showInWebsite="1" showInStore="1">
@@ -94,7 +93,6 @@
                     <validate>validate-no-html-tags</validate>
                     <comment model="Kalpesh\Securitytxt\Model\Config\Signature"/>
                 </field>
-
             </group>
         </section>
     </system>

@@ -24,6 +24,7 @@ class Validate extends \Magento\Framework\App\Config\Value
     {
         $sectionPathStr = explode('/', $this->getPath());
         $sectionName = reset($sectionPathStr);
+
         if ($sectionName == Config::XML_SECURITYTXT_MODULE &&
             $this->getData('group_id') == 'contact_information') {
 
@@ -48,7 +49,7 @@ class Validate extends \Magento\Framework\App\Config\Value
             if ($contactEmail != '') {
                 if (!filter_var($contactEmail, FILTER_VALIDATE_EMAIL)) {
                     throw new ValidatorException(
-                        __('Contact Information: Email validation failed. Please enter in acceptable format.')
+                        __('Contact Information: Email validation failed. Please enter in correct format.')
                     );
                 }
             }
@@ -56,7 +57,7 @@ class Validate extends \Magento\Framework\App\Config\Value
             if ($contactPhone != '') {
                 if (!$this->validatePhone($contactPhone)) {
                     throw new ValidatorException(
-                        __('Contact Information: Phone number validation failed. Please enter in acceptable format.')
+                        __('Contact Information: Phone number validation failed. Please enter in correct format.')
                     );
                 }
             }
@@ -64,7 +65,7 @@ class Validate extends \Magento\Framework\App\Config\Value
             if ($contactWebpage != '') {
                 if (!$this->validateUrl($contactWebpage)) {
                     throw new ValidatorException(
-                        __('Contact Information: Contact Page URL should be in acceptable format and must start with HTTPS.')
+                        __('Contact Information: Contact Page URL should be in correct format and must start with HTTPS.')
                     );
                 }
             }
@@ -72,7 +73,7 @@ class Validate extends \Magento\Framework\App\Config\Value
             if ($encryption != '') {
                 if (!$this->validateUrl($encryption)) {
                     throw new ValidatorException(
-                        __('Other Information: Encryption URL should be in acceptable format and must start with HTTPS.')
+                        __('Other Information: Encryption URL should be in correct format and must start with HTTPS.')
                     );
                 }
             }
@@ -80,7 +81,7 @@ class Validate extends \Magento\Framework\App\Config\Value
             if ($acknowledgements != '') {
                 if (!$this->validateUrl($acknowledgements)) {
                     throw new ValidatorException(
-                        __('Other Information: Acknowledgement URL should be in acceptable format and must start with HTTPS.')
+                        __('Other Information: Acknowledgements URL should be in correct format and must start with HTTPS.')
                     );
                 }
             }
@@ -88,7 +89,7 @@ class Validate extends \Magento\Framework\App\Config\Value
             if ($hiring != '') {
                 if (!$this->validateUrl($hiring)) {
                     throw new ValidatorException(
-                        __('Other Information: Hiring URL should be in acceptable format and must start with HTTPS.')
+                        __('Other Information: Hiring URL should be in correct format and must start with HTTPS.')
                     );
                 }
             }
@@ -96,7 +97,7 @@ class Validate extends \Magento\Framework\App\Config\Value
             if ($policy != '') {
                 if (!$this->validateUrl($policy)) {
                     throw new ValidatorException(
-                        __('Other Information: Policy URL should be in acceptable format and must start with HTTPS.')
+                        __('Other Information: Policy URL should be in correct format and must start with HTTPS.')
                     );
                 }
             }
@@ -132,6 +133,5 @@ class Validate extends \Magento\Framework\App\Config\Value
         } else {
             return false;
         }
-
     }
 }

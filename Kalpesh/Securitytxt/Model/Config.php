@@ -135,6 +135,4 @@ class Config
     {
         return $this->scopeConfig->getValue(static::XML_SECURITYTXT_SIGNATURE, ScopeInterface::SCOPE_WEBSITE);
     }
-
-
 }

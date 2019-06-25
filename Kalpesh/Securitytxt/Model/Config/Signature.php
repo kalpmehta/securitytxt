@@ -15,7 +15,6 @@ use \Magento\Config\Model\Config\CommentInterface;
 
 class Signature implements CommentInterface
 {
-
     /**
      * @var \Magento\Store\Model\StoreManagerInterface
      */
@@ -35,7 +34,6 @@ class Signature implements CommentInterface
     /**
      * @param string $elementValue
      * @return string
-     * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function getCommentText($elementValue)
     {

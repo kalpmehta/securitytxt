@@ -14,8 +14,6 @@ namespace Kalpesh\Securitytxt\Block;
 use Magento\Framework\View\Element\AbstractBlock;
 use Magento\Framework\View\Element\Context;
 use Kalpesh\Securitytxt\Model\Securitytxt as SecuritytxtModel;
-use Magento\Store\Model\StoreResolver;
-use Magento\Store\Model\StoreManagerInterface;
 use Magento\Framework\App\RequestInterface;
 
 /**
@@ -33,11 +31,6 @@ class Securitytxt extends AbstractBlock
     private $securitytxt;
 
     /**
-     * @var StoreManagerInterface
-     */
-    private $storeManager;
-
-    /**
      * @var RequestInterface
      */
     private $request;
@@ -45,8 +38,6 @@ class Securitytxt extends AbstractBlock
     /**
      * @param Context $context
      * @param SecuritytxtModel $securitytxt
-     * @param StoreResolver $storeResolver
-     * @param StoreManagerInterface|null $storeManager ,
      * @param RequestInterface $request ,
      * @param array $data
      *
@@ -55,16 +46,12 @@ class Securitytxt extends AbstractBlock
     public function __construct(
         Context $context,
         SecuritytxtModel $securitytxt,
-        StoreResolver $storeResolver,
-        StoreManagerInterface $storeManager = null,
         RequestInterface $request,
         array $data = []
     )
     {
         $this->securitytxt = $securitytxt;
         $this->request = $request;
-        $this->storeManager = $storeManager ?: \Magento\Framework\App\ObjectManager::getInstance()
-            ->get(StoreManagerInterface::class);
 
         parent::__construct($context, $data);
     }
@@ -76,15 +63,11 @@ class Securitytxt extends AbstractBlock
      */
     protected function _toHtml()
     {
-
         $identifier = trim($this->request->getPathInfo(), '/');
         if ($identifier === '.well-known/security.txt') {
             return $this->securitytxt->getSecuritytxt();
         } else if ($identifier === '.well-known/security.txt.sig') {
             return $this->securitytxt->getSecuritytxtsig();
         }
-
-
     }
-
 }

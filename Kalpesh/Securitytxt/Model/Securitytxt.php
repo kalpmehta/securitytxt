@@ -92,7 +92,6 @@ class Securitytxt
 
             return $contents;
         }
-
     }
 
     /**
@@ -112,7 +111,6 @@ class Securitytxt
      */
     public function getSecuritytxtsig()
     {
-
         return $this->escaper->escapeHtml($this->config->getSignature());
     }
 }
